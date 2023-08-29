@@ -14,7 +14,7 @@ node {
     }
     stage('test') {
       println('A test has failed!')
-      sh 'exit 1'
+      sh 'exit 1' // exit 1 means, that an error occurred
     }
   } catch(e) {
     // mark build as failed
