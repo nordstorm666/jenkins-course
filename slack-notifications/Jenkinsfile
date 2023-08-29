@@ -2,20 +2,17 @@ node {
 
   // job
   try {
-    stage("Deploy")
-    {
-        steps {
-            office365ConnectorSend webhookUrl: "${URL_WEBHOOK}",
-            message: 'Code is deployed',
-            status: 'Success'            
-        }
+    stage("Deploy"){
+        office365ConnectorSend webhookUrl: "${URL_WEBHOOK}",
+        message: 'Code is deployed',
+        status: 'Success'
     }
     stage('build') {
       println('so far so good...')
     }
     stage('test') {
       println('A test has failed!')
-      sh 'exit 1'
+     // sh 'exit 1'
     }
   } catch(e) {
     // mark build as failed
