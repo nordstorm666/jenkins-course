@@ -5,7 +5,8 @@ node {
   // job
   try {
     stage("Deploy"){
-        office365ConnectorSend webhookUrl: "${TEAMS_CONNECTOR}",
+      // You can use a parameterized build! Define Text Parameter: WEBHOOK_URL
+        office365ConnectorSend webhookUrl: "${WEBHOOK_URL}", // ${TEAMS_CONNECTOR}
         message: 'Code is deployed',
         status: 'Success'
     }
