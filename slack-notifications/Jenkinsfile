@@ -3,7 +3,7 @@ node {
   // job
   try {
     stage("Deploy"){
-        office365ConnectorSend webhookUrl: "${URL_WEBHOOK}",
+        office365ConnectorSend webhookUrl: "https://o365adessogroup.webhook.office.com/webhookb2/06a9e3d3-196d-419b-be9a-5361c60217ba@3d355765-67d9-47cd-9c7a-bf31179f56eb/JenkinsCI/3489cc3d398c4037aefec8edc472d7e3/c7a7555f-358d-4baa-a245-56835ca83717",
         message: 'Code is deployed',
         status: 'Success'
     }
